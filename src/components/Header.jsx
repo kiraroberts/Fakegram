@@ -5,25 +5,27 @@ import profilePic from '../img/profile.jpg';
 function Header(props){
   var imageStyle = {
     borderRadius: '50%',
-    width: '150px',
+    display: 'inline-block',
+    width: '150px'
   }
+
   var headerStyle = {
     fontSize: '20px',
     display: 'inline-block'
   }
 
   return (
-      <div style={headerStyle} className="Header">
-        <div className="profileImage">
-          <img style={imageStyle} src={profilePic} alt="Profile picture"/>
-        </div>
-          <div className="profileInfo">
-            <h2>Garfield</h2><button>Follow</button>
-            <h5><span>{props.posts} posts</span><span>{props.followers} followers</span><span>{props.following} following</span></h5>
-          </div>
-          <h5>{props.about}</h5>
-          <hr/>
+    <div className="Header">
+      <div className="profileImage">
+        <img style={imageStyle} src={profilePic} alt="Profile picture"/>
       </div>
+        <div style={headerStyle} className="profileInfo">
+          <h2>{props.userName}</h2><button>Follow</button>
+          <h5><span>{props.posts} posts</span><span>{props.followers} followers</span><span>{props.following} following</span></h5>
+          <h5>{props.about}</h5>
+        </div>
+        <hr/>
+    </div>
   );
 }
 
